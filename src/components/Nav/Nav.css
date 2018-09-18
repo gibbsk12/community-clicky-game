@@ -9,16 +9,16 @@ nav {
     font-family: 'Roboto Slab', serif;
   }
   
-  #cur-sco, #top-sco, #rw{
+  #gameScore, #highScore, #message{
     font-size: 1rem;
     padding-right: 10px;
   }
 
-  #cur-sco, #top-sco{
+  #gameScore, #highScore{
     text-align: right;
   }
 
-  #rw{
+  #message{
     color: red;
     text-align: center;
   }
@@ -44,7 +44,7 @@ nav {
   }
   
   @media only screen and (max-width: 750px) {
-    #cur-sco, #top-sco, a {
+    #gameScore, #highScore, a {
       font-size: 1rem;
       text-decoration: none;
     }

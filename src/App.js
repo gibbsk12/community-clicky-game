@@ -3,7 +3,6 @@ import CharacterCard from "./components/CharacterCard";
 import Nav from "./components/Nav";
 import Wrapper from "./components/Wrapper";
 import Title from "./components/Title";
-import Column from "./Column";
 import characters from "./characters.json";
 import "./App.css";
 
@@ -19,8 +18,8 @@ class App extends Component {
   state = {
     characters,
     currentScore: 0,
-    topScore: 0,
-    rightWrong: "",
+    highScore: 0,
+    message: "",
     clicked: [],
   };
 
@@ -37,10 +36,10 @@ class App extends Component {
     const newScore = this.state.currentScore + 1;
     this.setState({
       currentScore: newScore,
-      rightWrong: "Cool. CoolCoolCool. You guessed right!"
+      message: "Cool. CoolCoolCool. You guessed right!"
     });
-    if (newScore >= this.state.topScore) {
-      this.setState({ topScore: newScore });
+    if (newScore >= this.state.highScore) {
+      this.setState({ highScore: newScore });
     }
     this.handleShuffle();
   };
@@ -48,8 +47,8 @@ class App extends Component {
   handleReset = () => {
     this.setState({
       currentScore: 0,
-      topScore: this.state.topScore,
-      rightWrong: "Brittastrophe! That's not right!",
+      highScore: this.state.highScore,
+      message: "Brittastrophe! That's not right!",
       clicked: []
     });
     this.handleShuffle();
@@ -66,15 +65,14 @@ class App extends Component {
         <Nav
           title="Community Clicky Game"
           score={this.state.currentScore}
-          topScore={this.state.topScore}
-          rightWrong={this.state.rightWrong}
+          highScore={this.state.highScore}
+          message={this.state.message}
         />
 
         <Title>
         Click on an image to earn points, but don't click on any more than once!
         </Title>
             {this.state.characters.map(character => (
-              <Column size="md-2 sm-4">
                 <CharacterCard
                   key={character.id}
                   handleClick={this.handleClick}
@@ -84,7 +82,6 @@ class App extends Component {
                   id={character.id}
                   image={character.image}
                 />
-              </Column>
             ))}
       </Wrapper>
     );
