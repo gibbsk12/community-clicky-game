@@ -40,7 +40,7 @@ class App extends Component {
     });
     if (newScore >= this.state.highScore) {
       this.setState({ highScore: newScore });
-    }
+    } 
     this.handleShuffle();
   };
 
