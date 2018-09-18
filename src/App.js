@@ -3,8 +3,6 @@ import CharacterCard from "./components/CharacterCard";
 import Nav from "./components/Nav";
 import Wrapper from "./components/Wrapper";
 import Title from "./components/Title";
-import Container from "./Container";
-import Row from "./Row";
 import Column from "./Column";
 import characters from "./characters.json";
 import "./App.css";
@@ -75,9 +73,6 @@ class App extends Component {
         <Title>
         Click on an image to earn points, but don't click on any more than once!
         </Title>
-
-        <Container>
-          <Row>
             {this.state.characters.map(character => (
               <Column size="md-2 sm-4">
                 <CharacterCard
@@ -91,8 +86,6 @@ class App extends Component {
                 />
               </Column>
             ))}
-          </Row>
-        </Container>
       </Wrapper>
     );
   }
