@@ -5,7 +5,7 @@ const Nav = props => (
   <nav>
     <ul>
       <li className="brand animated wobble">
-        <a href="/" onClick={(e)=> e.preventDefault()}>{props.title}</a>
+        <span className = "header">{props.title}</span>
       </li>
 
       <li id="message">{props.message}</li>

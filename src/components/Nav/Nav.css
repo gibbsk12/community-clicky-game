@@ -23,14 +23,10 @@ nav {
     text-align: center;
   }
 
-  a {
+  .header {
     color: #29339B;
   }
   
-  a:hover {
-    color: #29339B;
-    text-decoration: none;
-  }
   
   nav li {
     display: inline-block;
